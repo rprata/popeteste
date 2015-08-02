@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>POPETeste</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
+		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+		<!-- skin -->
+		<link rel="stylesheet" href="skin/default.css">
+
+		<style>
+/*			html { overflow: hidden; }
+*/			canvas { 
+				display: inline-block; 
+				background: #202020; 
+				width: 95%;
+				height: 45%;
+				box-shadow: 0px 0px 10px blue;
+			}
+			#controls {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-around;
+				height: 20%;
+				width: 100%;
+			}
+			#record { height: 15vh; }
+			#record.recording { 
+				background: red;
+				background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+				background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+				background: radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
+			}
+			#save, #save img { height: 10vh; }
+			#save { opacity: 0.25;}
+			#save[download] { opacity: 1;}
+			#viz {
+				height: 80%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+			}
+			@media (orientation: landscape) {
+				body { flex-direction: row;}
+				#controls { flex-direction: column; height: 100%; width: 10%;}
+				#viz { height: 100%; width: 90%;}
+			}
+
+		</style>
+    </head>
+	<body>
+		<section id="header" class="appear"></section>
+		<section id="section-test1" class="section appear clearfix">
+			<div class="container">
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Teste - Parte 2</h2>
+							<p>Grave o que está acotecendo na cena abaixo. Para iniciar, conecte um microfone ao seu computador e aperte o ícone de gravação. Para terminar aperte novamente no ícone.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-1">
+						<img src="img/tests/teste1.jpg" alt="teste 1" height="1200" width="1000">
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-md-8" id="viz">
+						<canvas id="analyser" width="400" height="100"></canvas>
+					</div>
+					<div class="col-md-4" id="controls">
+						<br><br><br>
+						<img id="record" src="img/recorder/mic128.png" onclick="toggleRecording(this);">
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-5">
+						<button type="button" id="test2_bt" class="btn btn-primary btn-lg">PROSSEGUIR</button>
+					</div>
+				</div>
+			</div>	
+		</section>
+		<br>
+		<br>
+		<section id="footer" class="section footer">
+		<!-- <div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div> -->
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
+			</div>
+		</div>
+
+		</section>
+		<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+
+			
+
+
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.isotope.min.js"></script>
+		<script src="js/jquery.nicescroll.min.js"></script>
+		<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+		<script src="js/skrollr.min.js"></script>		
+		<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+		<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+		<script src="js/stellar.js"></script>
+		<script src="js/jquery.appear.js"></script>
+		<script src="js/validate.js"></script>
+
+		<script src="js/audiodisplay.js"></script>
+		<script src="js/recorderjs/recorder.js"></script>
+		<script src="js/main-recorder.js"></script>
+
+		<script type="text/javascript">
+		  $('#test2_bt').click(function() {
+		    	var win = window.open('teste3.html', '_self');
+	  			win.focus();
+		  });
+		</script>
+
+	</body>
