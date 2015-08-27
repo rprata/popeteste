@@ -1,0 +1,27 @@
+ ------------------ 
+
+Assunto: Questionário Parte 1
+
+ Nome: Raul Sena Ferreira
+
+ Tel: 
+
+ Sexo: male
+
+ Escolaridade: mestrado
+
+ Graduado?:in-other
+
+ Profissão: Desenvolvedor de software
+
+ Tempo de Estudo de espanhol: 6-months
+
+ Cursou espanhol em: 
+
+ Nível de espanhol: beginner
+
+ Dificuldade: listening
+
+ Email: raul@raulferreira.com.br
+
+ ------------------ 
