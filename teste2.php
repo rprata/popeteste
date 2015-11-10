@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -59,6 +63,9 @@
 				#viz { height: 100%; width: 90%;}
 			}
 
+          ul { list-style: none; }
+          #recordingslist audio { display: block; margin-bottom: 10px; }
+
 		</style>
     </head>
 	<body>
@@ -68,27 +75,27 @@
 				<div class="row mar-bot40">
 					<div class="col-md-offset-3 col-md-6">
 						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">Teste - Parte 3</h2>
+							<h2 class="section-heading animated" data-animation="bounceInUp">Teste - Parte 2</h2>
 							<p>Grave o que está acontecendo na cena abaixo. Para iniciar, conecte um microfone ao seu computador e aperte o ícone de gravação. Para terminar aperte novamente no ícone.</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-1" style="width: 100%; margin-left: 0;">
-						<!-- <img src="img/tests/teste2.jpg" alt="teste 2" height="1200" width="1000"> -->
+						<!-- <img src="img/tests/teste1.jpg" alt="teste 1" height="1200" width="1000"> -->
 						<div id="imagens">
-							<img src="img/tests/teste2/img1.jpg">
-							<img src="img/tests/teste2/img2.jpg">
-							<img src="img/tests/teste2/img3.jpg">
-							<img src="img/tests/teste2/img4.jpg">
-							<img src="img/tests/teste2/img5.jpg">
-							<img src="img/tests/teste2/img6.jpg">
-							<img src="img/tests/teste2/img7.jpg">
-							<img src="img/tests/teste2/img8.jpg">
-							<img src="img/tests/teste2/img9.jpg">
-							<img src="img/tests/teste2/img10.jpg">
-							<img src="img/tests/teste2/img11.jpg">
-							<img src="img/tests/teste2/img12.jpg">
+							<img src="img/tests/teste1/img1.jpg">
+							<img src="img/tests/teste1/img2.jpg">
+							<img src="img/tests/teste1/img3.jpg">
+							<img src="img/tests/teste1/img4.jpg">
+							<img src="img/tests/teste1/img5.jpg">
+							<img src="img/tests/teste1/img6.jpg">
+							<img src="img/tests/teste1/img7.jpg">
+							<img src="img/tests/teste1/img8.jpg">
+							<img src="img/tests/teste1/img9.jpg">
+							<img src="img/tests/teste1/img10.jpg">
+							<img src="img/tests/teste1/img11.jpg">
+							<img src="img/tests/teste1/img12.jpg">
 						</div>
 					</div>
 				</div>
@@ -100,19 +107,19 @@
 					</div>
 					<div class="col-md-4" id="controls">
 						<br><br><br>
-						<img id="record" src="img/recorder/mic128.png" onclick="toggleRecording(this);">
+						<img id="record" src="img/recorder/mic128.png" onclick="startRecording(this);"><!--toggleRecording(this);-->
+            <ul id="recordingslist"></ul>
+            <pre id="log"></pre>
 					</div>
 				</div>
 				<br>
 				<br>
 				<br>
 				<div class="row">
-					<form action="email.php" method="post">
-						<div class="col-md-12 col-md-offset-5">
-							<input type="hidden" name="cod" value="10">
-							<button type="submit" id="test3_bt" class="btn btn-primary btn-lg">ENVIAR</button>
-						</div>
-					</form>
+					<div class="col-md-12 col-md-offset-5">
+						<input type="hidden" name="cod" value="11">
+						<button type="button" id="test2_bt" class="btn btn-primary btn-lg">PROSSEGUIR</button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -143,7 +150,7 @@
 
 
 
-    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
@@ -162,7 +169,7 @@
 		<script src="js/main-recorder.js"></script>
 
 		<script type="text/javascript">
-		  $('#test3_bt').click(function() {
+		  $('#test2_bt').click(function() {
 		    	var win = window.open('teste3.html', '_self');
 	  			win.focus();
 		  });
@@ -251,5 +258,4 @@
   };
 		</script>
     <script src="recordmp3.js"></script>
-
 	</body>
