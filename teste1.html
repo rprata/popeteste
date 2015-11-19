@@ -10,7 +10,7 @@
         <title>POPETeste</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
+		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
 		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -39,8 +39,8 @@
 								 Sua mensagem foi enviada. Obrigado!
 							</div>
 							<form action="contact/contact.php" method="post" role="form" class="contactForm">
-								<input type="hidden" name="cod" value="01">
 							  <div class="form-group">
+                  <input type="hidden" name="cod" value="01">
 								<label for="name">Nome Completo</label>
 								<input type="text" name="name" class="form-control" id="name" placeholder="Nome" data-rule="maxlen:4" data-msg="Por favor, digite seu nome" />
 								<div class="validation"></div>
@@ -49,7 +49,7 @@
 							 	<label for="age">Idade</label>
 							  	<input type="number" size="6" name="age" min="0" max="99" value="21"><br>
 							  </div>
-							  <div class="form-group"> 
+							  <div class="form-group">
 							  	<label for="sex">Sexo</label>
 							  	<br>
 							  	<input type="radio" name="sex" value="male" checked> Masculino
@@ -82,7 +82,7 @@
 								<br>
 								<input type="radio" name="education" value="pos-doutorado"> Pós-doutorado
 								<br>
-							  </div>							
+							  </div>
 							  <div class="form-group">
 							  	<label for="if-graduation">Se Possui Ensino Superior</label>
 							  	<br>
@@ -98,7 +98,7 @@
 							  <div class="form-group">
 							  	<label for="jon">Profissão</label>
 								<input type="text" name="job" class="form-control" id="job" placeholder="Profissão" data-rule="maxlen:4" data-msg="Por favor, digite sua profissão" />
-								<div class="validation"></div>						
+								<div class="validation"></div>
 							  </div>
   							  <div class="form-group">
 							  	<label for="how-long-do-you-study-spanish">Por Quanto Tempo Estudou Língua Espanhola?</label>
@@ -153,13 +153,13 @@
 							  </div>
 							  <br>
 							  <button type="submit" id="test1_bt" class="btn btn-theme pull-right">PROSSEGUIR</button>
-							</form>	
+							</form>
 
 						</div>
 					</div>
 					<!-- ./span12 -->
 				</div>
-				
+
 			</div>
 		</section>
 
@@ -174,7 +174,7 @@
                         <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>				
+                    </ul>
 				</div>
 			</div> -->
 
@@ -184,7 +184,7 @@
 		</div>
 
 		</section>
-		<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+		<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 
 		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="js/jquery.js"></script>
@@ -193,18 +193,21 @@
 		<script src="js/jquery.isotope.min.js"></script>
 		<script src="js/jquery.nicescroll.min.js"></script>
 		<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-		<script src="js/skrollr.min.js"></script>		
+		<script src="js/skrollr.min.js"></script>
 		<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 		<script src="js/jquery.localscroll-1.2.7-min.js"></script>
 		<script src="js/stellar.js"></script>
 		<script src="js/jquery.appear.js"></script>
-		<script src="js/validate.js"></script>
-
+		<!--<script src="js/validate.js"></script>-->
+		<script src="js/jquery.cookie.js"></script>
 		<script type="text/javascript">
 		  $('#test1_bt').click(function() {
-		    	var win = window.open('teste2.html', '_self');
+		  		var name = $('#name').val().replace(/\s/g,"");
+		  		$.cookie("nome", name, {path:'/'});
+		  		$.cookie("page", "2", {path:'/'});
+		    	var win = window.open('teste2.html', '_blank');
 	  			win.focus();
 		  });
 		</script>
-    
+
 	</body>

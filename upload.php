@@ -1,5 +1,4 @@
 <?php
-
 if(!is_dir("recordings")){
 	$res = mkdir("recordings",0777);
 }
@@ -11,8 +10,9 @@ $decodedData = base64_decode($data);
 // print out the raw data,
 //echo ($decodedData);
 $filename = urldecode($_POST['fname']);
+$_SESSION["arquivo"] = $filename;
 // write the data out to the file
-$fp = fopen('recordings/'.$_SESSION["email"].$filename, 'wb');
+$fp = fopen('recordings/'.$filename, 'wb');
 fwrite($fp, $decodedData);
 fclose($fp);
 ?>
